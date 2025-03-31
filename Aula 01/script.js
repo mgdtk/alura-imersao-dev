@@ -22,7 +22,9 @@ valorFormatado = valor.toLocaleString("pt-BR", {style: "currency", currency: "BR
 if (cambio[moeda]) {
     let valorConvertido = (cambio[moeda] * valor).toLocaleString("pt-BR", {style: "decimal"});
     console.log(valorConvertido);
-    alert(`${valorFormatado} equivale a ${valorConvertido} ${moeda.charAt(0).toUpperCase() + moeda.slice(1)}s.`);
+
+    let nomeMoeda = moeda === "dolar" ? "Dólares" : `${moeda.charAt(0).toUpperCase() + moeda.slice(1)}s`;
+    alert(`${valorFormatado} equivale a ${valorConvertido} ${nomeMoeda}.`);
 } else {
     alert("Erro.");
 }
