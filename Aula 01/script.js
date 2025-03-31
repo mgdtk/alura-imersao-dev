@@ -1,5 +1,28 @@
-wons = prompt("Valor em Wons para converter: ");
-real = 257.026; // 1000 BRL = 257026 KRW
-valorEmReal = wons * real;
-console.log(valorEmReal);
-alert(valorEmReal);
+let moeda = prompt("Qual moeda deseja converter? Digite Won, Euro ou Dolar.");
+
+while (moeda.toLowerCase() !== "won" && moeda.toLowerCase() !== "euro" && moeda.toLowerCase() !== "dolar") {
+    moeda = prompt("Entrada inválida. Qual moeda deseja converter? Digite Won, Euro ou Dolar.");
+}
+
+let valor = parseFloat(prompt("Qual valor (em reais) deseja converter?"));
+
+while (isNaN(valor) || valor === "" || valor <= 0) {
+    valor = parseFloat(prompt("Entrada inválida. Qual valor (em reais) deseja converter?"));
+}
+
+let cambio = {
+    won: 257.026, // 1000 BRL = 257026 KRW
+    dolar: 0.1744, // 1 BRL = 0.1744 USD
+    euro: 0.1615 // 1 BRL = 0.1615 EUR
+};
+
+moeda = moeda.toLowerCase();
+valorFormatado = valor.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
+
+if (cambio[moeda]) {
+    let valorConvertido = (cambio[moeda] * valor).toLocaleString("pt-BR", {style: "decimal"});
+    console.log(valorConvertido);
+    alert(`${valorFormatado} equivale a ${valorConvertido} ${moeda.charAt(0).toUpperCase() + moeda.slice(1)}s.`);
+} else {
+    alert("Erro.");
+}
