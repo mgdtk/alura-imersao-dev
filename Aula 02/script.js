@@ -1,52 +1,33 @@
-idade = prompt("Quantos anos você tem?");
+let idade = prompt("Quantos anos você tem?");
+
+while (isNaN(idade) || idade == "" || idade < 0 || idade > 99) {
+    idade = prompt("Digite uma idade válida.");
+}
 
 if (idade < 18) {
     alert("Você NÃO pode jogar jokenpô.");
-}
+} else {
+    let nome = prompt("Qual é o seu nome?");
 
-if (idade >= 18) {
-    escolhaJogador = prompt("Digite 1 para Pedra, 2 para Papel ou 3 para Tesoura.");
-    escolhaComputador = Math.floor(Math.random() * 3) + 1;
+    let escolhaJogador = parseInt(prompt("Digite 1 para Pedra, 2 para Papel ou 3 para Tesoura."));
 
-    // Jogador Pedra, Computador Pedra --> Empate
-    // Jogador Tesoura, Computador Tesoura --> Empate
-    // Jogador Papel, Computador Papel --> Empate
+    while (escolhaJogador !== 1 && escolhaJogador !== 2 && escolhaJogador !== 3) {
+        escolhaJogador = parseInt(prompt("Entrada inválida. Digite 1 para Pedra, 2 para Papel ou 3 para Tesoura."));
+    }
+
+    let escolhaComputador = Math.floor(Math.random() * 3) + 1;
+
+    let escolhas = {
+        1: "pedra",
+        2: "papel",
+        3: "tesoura"
+    };
+
     if (escolhaJogador == escolhaComputador) {
-        alert("Empate!");
+        alert(`Empate! O computador escolheu ${escolhas[escolhaComputador]}.`);
+    } else if ((escolhaJogador == 1 && escolhaComputador == 3) || (escolhaJogador == 2 && escolhaComputador == 1) || (escolhaJogador == 3 && escolhaComputador == 2)) {
+        alert(`${nome} vence! O computador escolheu ${escolhas[escolhaComputador]}.`);
+    } else {
+        alert(`Computador vence! O computador escolheu ${escolhas[escolhaComputador]}.`);
     }
-
-    if (escolhaJogador == 1) {
-        // Jogador Pedra, Computador Papel --> Computador vence
-        if (escolhaComputador == 2) {
-            alert("Computador vence! O computador escolheu papel.");
-        }
-        // Jogador Pedra, Computador Tesoura --> Jogador vence
-        if (escolhaComputador == 3) {
-            alert("Você vence! O computador escolheu tesoura.");
-        }
-    }
-
-    if (escolhaJogador == 2) {
-        // Jogador Papel, Computador Pedra --> Jogador vence
-        if (escolhaComputador == 1) {
-            alert("Você vence! O computador escolheu pedra.");
-        }
-        // Jogador Papel, Computador Tesoura --> Computador vence
-        if (escolhaComputador == 3) {
-            alert("Computador vence! O computador escolheu tesoura.");
-        }
-    }
-
-    if (escolhaJogador == 3) {
-        // Jogador Tesoura, Computador Pedra --> Computador vence
-        if (escolhaComputador == 1) {
-            alert("Computador vence! O computador escolheu pedra.");
-        }
-        // Jogador Tesoura, Computador Papel --> Jogador vence
-        if (escolhaComputador == 2) {
-            alert("Você vence! O computador escolheu papel.");
-        }
-    }
-
-    alert("escolhaComputador: " + escolhaComputador);
 }
