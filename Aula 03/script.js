@@ -1,33 +1,54 @@
 function jogar() {
-    let rodada = 1;
-    let vitoria = 0;
+    let rodadas = prompt("Quantas rodadas deseja jogar?");
+    if (verificarCancelamento(rodadas)) return;
+    rodadas = parseInt(rodadas);
 
-    while (rodada <= 3) {
-        console.log(`Rodada: ${rodada}`);
+    while (isNaN(rodadas) || rodadas < 1) {
+        rodadas = prompt("Entrada inválida. Digite o número de rodadas que deseja jogar.");
+        if (verificarCancelamento(rodadas)) return;
+        rodadas = parseInt(rodadas);
+    }
 
-        let pisoQuebrado = Math.floor(Math.random() * 3) + 1;
-        let escolhaJogador = parseInt(prompt(`Rodada ${rodada}. Escolha o vidro 1, 2 ou 3.`));
-        
-        while (isNaN(escolhaJogador) || escolhaJogador < 1 || escolhaJogador > 3) {
-            escolhaJogador = parseInt(prompt(`Entrada inválida. Digite 1, 2 ou 3.`));
+    let tabuada = prompt("Deseja ser desafiado até a tabuada de qual número?");
+    if (verificarCancelamento(tabuada)) return;
+    tabuada = parseInt(tabuada);
+
+    while (isNaN(tabuada) || tabuada < 0) {
+        tabuada = prompt("Entrada inválida. Digite o número da tabuada limite que gostaria de jogar.");
+        if (verificarCancelamento(tabuada)) return;
+        tabuada = parseInt(tabuada);
+    }
+
+    for (let i = 1; i < (rodadas + 1); i++) {
+        let primeiroNumero = Math.floor(Math.random() * (tabuada + 1));
+        let segundoNumero = Math.floor(Math.random() * (tabuada + 1));
+
+        let resultado = primeiroNumero * segundoNumero;
+
+        let palpiteJogador = prompt(`Rodada ${i} de ${rodadas}. Digite o resultado da seguinte multiplicação: ${primeiroNumero}x${segundoNumero}`);
+        if (verificarCancelamento(palpiteJogador)) return;
+
+        while (isNaN(palpiteJogador) || palpiteJogador == "") {
+            palpiteJogador = prompt(`Entrada inválida. Digite um número para o resultado da seguinte multiplicação: ${primeiroNumero}x${segundoNumero}`);
+            if (verificarCancelamento(palpiteJogador)) return;
         }
 
-        if (escolhaJogador == pisoQuebrado) {
-            alert("O vidro quebrou! Você perdeu.");
-            break;
+        if (palpiteJogador != resultado) {
+            alert(`Você errou! O resultado era ${resultado}.`);
+            return;
         } else {
-            alert(`Passou! O piso quebrado era o vidro ${pisoQuebrado}.`);
-            if (rodada == 3) {
-                vitoria = 1;
+            alert(`Acertou!`);
+            if (i == rodadas) {
+                alert("Parabéns! Você venceu!");
             }
         }
-
-        rodada += 1;
     }
+}
 
-    console.log(vitoria);
-
-    if (vitoria) {
-        alert("Parabéns! Você venceu!");
+function verificarCancelamento(valor) {
+    if (valor === null) {
+        console.log("Operação cancelada.");
+        return true;
     }
+    return false;
 }
