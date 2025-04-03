@@ -29,16 +29,24 @@ body {
     background: rgba(0, 0, 0);
     box-shadow: 0 0 5px #19caca;
 }
+
+#container {
+    min-height: 150px;
+}
   
 /* Títulos e textos */
+h1,
 h2,
 p {
     color: white;
+    display: flex;
+    justify-content: center;
 }
   
 button {
     padding: 10px 20px;
-    margin: 10px;
+    display: flex;
+    margin: 0 auto;
     border: none;
     background: #ff1b7b;
     color: white;
@@ -48,4 +56,37 @@ button {
   
 button:hover {
     background: #19caca;
+}
+
+#inputsPersonagens, label {
+    display: none;
+}
+
+label {
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+#inputsPersonagens {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+input {
+    justify-content: space-around;
+    height: 1.4em;
+}
+
+#comecarBtn {
+    display: none;
+    margin: 30px auto;
+}
+
+#resultadoBtn {
+    display: none;
 }

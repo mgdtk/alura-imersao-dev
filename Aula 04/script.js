@@ -1,29 +1,44 @@
-jogador = ["", "", ""];
-computador = ["", "", ""];
+let forcaTotalJogador = 0;
+let forcaTotalComputador = 0;
 
-forcaJogador = 0;
-forcaComputador = 0;
-
-for (let i = 0; i < 3; i++) {
-    escolhaPersonagem = prompt(`Digite o nome do seu personagem ${i + 1}.`);
-    jogador[i] = escolhaPersonagem;
-    forcaJogador += Math.floor(Math.random() * 10) + 1;
+function escolher() {
+    document.getElementById("escolherBtn").style.display = "none";
+    document.getElementById("inputsPersonagens").style.display = "flex";
+    document.getElementById("labelPersonagensJogador").style.display = "flex";
+    document.getElementById("comecarBtn").style.display = "flex";
+    document.getElementById("escolherTexto").style.display = "none";
 }
 
-for (let i = 0; i < 3; i++) {
-    indiceAleatorio = Math.floor(Math.random() * 10);
-    personagensComputador = ["Voldemort", "Bellatrix", "Draco", "Lúcio", "Grindelwald", "Harry", "Hermione", "Ron", "Luna", "Snape"];
-    computador[i] = personagensComputador[indiceAleatorio];
-    forcaComputador += Math.floor(Math.random() * 10) + 1;
+function jogar() {
+    document.getElementById("inputsPersonagens").style.display = "none";
+    document.getElementById("labelPersonagensJogador").style.display = "none";
+    document.getElementById("comecarBtn").style.display = "none";
+
+    const personagensJogador = document.querySelectorAll(".personagemJogador");
+    let forcaJogador = [0, 0, 0];
+    let forcaComputador = [0, 0, 0];
+
+    for (let i = 0; i < personagensJogador.length; i++) {
+        forcaJogador[i] = Math.floor(Math.random() * 5) + 1;
+        forcaComputador[i] = Math.floor(Math.random() * 5) + 1;
+        console.log(personagensJogador[i].value); // Controle
+        console.log(forcaJogador[i]); // Controle
+    }
+
+    forcaTotalJogador = forcaJogador.reduce((acc, valor) => acc + valor, 0);
+    forcaTotalComputador = forcaComputador.reduce((acc, valor) => acc + valor, 0);
+
+    document.getElementById("resultadoBtn").style.display = "flex";
 }
 
-console.log(jogador);
-console.log(computador);
-
-if (forcaJogador > forcaComputador) {
-    alert(`Você venceu o cabo de guerra!\nA força do seu time foi ${forcaJogador}, enquanto que a do seu time oponente foi ${forcaComputador}.`);
-} else if (forcaJogador == forcaComputador) {
-    alert(`Empate!\nO seu time e o seu time oponente tiveram a mesma força de ${forcaJogador}.`);
-} else {
-    alert(`O computador venceu o cabo de guerra!\nA força do time dele foi ${forcaComputador}, enquanto que a do seu time foi ${forcaJogador}.`);
+function verResultado() {
+    document.getElementById("resultadoBtn").style.display = "none";
+    let resultado = document.getElementById("resultadoFinal");
+    if (forcaTotalJogador > forcaTotalComputador) {
+        resultado.textContent = "Parabéns! O seu time venceu!";
+    } else if (forcaTotalJogador == forcaTotalComputador) {
+        resultado.textContent = "Empate!";
+    } else {
+        resultado.textContent = "Você perdeu...";
+    }
 }
