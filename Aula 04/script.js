@@ -34,6 +34,7 @@ function jogar() {
 function verResultado() {
     document.getElementById("resultadoBtn").style.display = "none";
     let resultado = document.getElementById("resultadoFinal");
+
     if (forcaTotalJogador > forcaTotalComputador) {
         resultado.textContent = "Parabéns! O seu time venceu!";
     } else if (forcaTotalJogador == forcaTotalComputador) {
@@ -41,4 +42,10 @@ function verResultado() {
     } else {
         resultado.textContent = "Você perdeu...";
     }
+
+    let infoForcaJogador = document.getElementById("informacoesJogador");
+    let infoForcaComputador = document.getElementById("informacoesComputador");
+
+    infoForcaJogador.textContent = `A força total do seu time foi: ${forcaTotalJogador}`;
+    infoForcaComputador.textContent = `A força total do time do computador foi: ${forcaTotalComputador}`;
 }

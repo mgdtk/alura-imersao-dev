@@ -1,5 +1,5 @@
 body {
-    background: url("https://i.postimg.cc/TY28jTqJ/bg4-ia.jpg") no-repeat center
+    background: url("./img/tug-of-war.png") no-repeat center
         center fixed;
     background-size: cover;
     font-family: "Gabarito", sans-serif;
@@ -11,12 +11,13 @@ body {
 }
   
 .logo img {
-    width: 40%;
+    max-width: 150px;
+    width: auto;
 }
   
 /* Caixa principal do jogo */
 .conteudo-jogo {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px #ff1b7b;
     margin: 30px;
     padding: 20px;
@@ -26,12 +27,13 @@ body {
 }
   
 .conteudo-jogo:hover {
-    background: rgba(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 5px #19caca;
 }
 
 #container {
     min-height: 150px;
+    padding: 20px;
 }
   
 /* Títulos e textos */
@@ -41,17 +43,19 @@ p {
     color: white;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
   
 button {
-    padding: 10px 20px;
+    padding: 20px 40px;
     display: flex;
-    margin: 0 auto;
+    margin: 30px auto;
     border: none;
     background: #ff1b7b;
     color: white;
     cursor: pointer;
     transition: background 0.3s;
+    font-size: 1.4em;
 }
   
 button:hover {
@@ -67,7 +71,6 @@ label {
     padding: 20px 0;
     width: 100%;
     justify-content: center;
-    font-size: 1.2em;
 }
 
 #inputsPersonagens {
@@ -75,11 +78,13 @@ label {
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
+    margin: 30px 0 70px;
 }
 
 input {
     justify-content: space-around;
-    height: 1.4em;
+    font-size: 1.4em;
+    padding: 5px;
 }
 
 #comecarBtn {
@@ -89,4 +94,20 @@ input {
 
 #resultadoBtn {
     display: none;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2, label {
+    font-size: 1.8em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.titulo h1 {
+    color: black;
 }
