@@ -1,5 +1,5 @@
 body {
-    background: url("https://i.postimg.cc/TY28jTqJ/bg4-ia.jpg") no-repeat center
+    background: url("./img/loki.png") no-repeat center
       center fixed;
     background-size: cover;
     font-family: "Gabarito", sans-serif;
@@ -11,7 +11,8 @@ body {
 }
   
 .logo img {
-    width: 40%;
+    max-width: 150px;
+    width: auto;
 }
   
 /* Caixa principal do jogo */
@@ -59,6 +60,7 @@ p {
 .pergunta {
     font-weight: 600;
     color: white;
+    font-size: 1.3em;
 }
   
 /* Progresso da pergunta */

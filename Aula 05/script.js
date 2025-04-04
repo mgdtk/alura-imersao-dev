@@ -1,5 +1,51 @@
 // PARTE 1: Lista de perguntas e respostas
-
+let perguntas = [
+    {
+        pergunta: "Qual é o nome completo de Loki?",
+        respostas: [
+            {opcao: "Loki Laufeyson", correto: true},
+            {opcao: "Loki Odinson", correto: false},
+            {opcao: "Loki Bifrost", correto: false},
+            {opcao: "Loki Thorstein", correto: false}
+        ]
+    },
+    {
+        pergunta: "Quem é o pai biológico de Loki?",
+        respostas: [
+            {opcao: "Odin", correto: false},
+            {opcao: "Thor", correto: false},
+            {opcao: "Laufey", correto: true},
+            {opcao: "Fandral", correto: false}
+        ]
+    },
+    {
+        pergunta: "Em qual filme da Marvel Loki se torna o principal vilão?",
+        respostas: [
+            {opcao: "Vingadores: A Era de Ultron", correto: false},
+            {opcao: "Thor: O Mundo Sombrio", correto: false},
+            {opcao: "Capitão Marvel", correto: false},
+            {opcao: "Vingadores", correto: true}
+        ]
+    },
+    {
+        pergunta: "Qual é o poder principal de Loki?",
+        respostas: [
+            {opcao: "Superforça", correto: false},
+            {opcao: "Ilusões e manipulação da realidade", correto: true},
+            {opcao: "Controle sobre o fogo", correto: false},
+            {opcao: "Telepatia", correto: false}
+        ]
+    },
+    {
+        pergunta: "Qual artefato Loki usa para viajar entre os reinos em 'Thor: Ragnarok'?",
+        respostas: [
+            {opcao: "Coração de Asgard", correto: false},
+            {opcao: "Cajado de Loki", correto: false},
+            {opcao: "Tesseract", correto: true},
+            {opcao: "Dagger of the Serpent", correto: false}
+        ]
+    }
+];
 
 // PARTE 2: Pegando os elementos do HTML
 const perguntaElemento = document.querySelector(".pergunta");
@@ -35,7 +81,6 @@ function carregarPergunta() {
         botao.onclick = function () {
             // Se a resposta for correta (resposta.correto === true), incrementa o número de acertos
             if (resposta.correto) {
-                acertos = acertos + 1;
                 acertos++; // Incrementa o contador de acertos
             }
 
