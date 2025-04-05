@@ -7,7 +7,7 @@ body {
     color: white;
     position: relative;
 }
-  
+
 /* Logo Styles */
 .logo {
     position: absolute;
@@ -16,16 +16,16 @@ body {
     max-width: 150px;
     width: auto;
 }
-  
+
 /* Container with the background image */
 .container {
-    background: url('https://i.postimg.cc/TY28jTqJ/bg4-ia.jpg') no-repeat center center/cover;
+    background: url('./img/jokenpo.png') no-repeat center center/cover;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-  
+
 /* Content div for text and button */
 .content {
     text-align: center;
@@ -33,11 +33,11 @@ body {
     padding: 20px 40px;
     border-radius: 8px;
 }
-  
+
 .content h2 {
     margin-bottom: 20px;
 }
-  
+
 /* Button Styles */
 button {
     background-color: #ff1b7b;
@@ -48,13 +48,13 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-  
+
 button:hover {
     background-color: #1ABC9C;
 }
-  
+
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 10px;
-}  
+}
