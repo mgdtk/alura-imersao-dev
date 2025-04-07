@@ -59,10 +59,15 @@ footer {
     padding: 10px;
 }
 
-.telaIdade, #idadeInvalida, #idadeInsuficiente, .telaNome, #nomeInvalido, .telaJogo, input[type="radio"] {
+.telaIdade, #idadeInvalida, #idadeInsuficiente, .telaNome, #nomeInvalido, .telaJogo, input[type="radio"], #jogadaInvalida, .telaResultado, .telaFim {
     display: none;
 }
 
-#idadeInvalida, #nomeInvalido {
+#idadeInvalida, #nomeInvalido, #jogadaInvalida {
     color: #ff1b42;
+}
+
+label img {
+    width: 250px;
+    height: 250px;
 }

@@ -33,22 +33,29 @@
                 <p id="nomeInvalido">Digite um nome válido!</p>
             </div>
             <div class="telaJogo">
-                <form>
-                    <h2>Escolha abaixo Pedra, Papel ou Tesoura.</h2>
-                    <label for="pedra">
-                        <input type="radio" id="pedra" name="escolha" value="pedra">
-                        <img src="./img/" alt="pedra">
-                    </label>
-                    <label for="papel">
-                        <input type="radio" id="papel" name="escolha" value="papel">
-                        <img src="./img/" alt="papel">
-                    </label>
-                    <label for="tesoura">
-                        <input type="radio" id="tesoura" name="escolha" value="tesoura">
-                        <img src="./img/" alt="tesoura">
-                    </label>
-                    <button type="submit" id="enviarEscolha">Confirmar escolha</button>
-                </form>
+                <h2>Escolha abaixo Pedra, Papel ou Tesoura.</h2>
+                <label for="pedra">
+                    <input type="radio" id="pedra" name="escolha" value="pedra">
+                    <img src="./img/pedra.png" alt="pedra">
+                </label>
+                <label for="papel">
+                    <input type="radio" id="papel" name="escolha" value="papel">
+                    <img src="./img/papel.png" alt="papel">
+                </label>
+                <label for="tesoura">
+                    <input type="radio" id="tesoura" name="escolha" value="tesoura">
+                    <img src="./img/tesoura.png" alt="tesoura">
+                </label>
+                <button onclick="verificarJogada()" id="enviarEscolha">Confirmar escolha</button>
+                <p id="jogadaInvalida">Escolha Pedra, Papel ou Tesoura para prosseguir!</p>
+            </div>
+            <div class="telaResultado">
+                <h2 id="resultadoJogada"></h2>
+                <button onclick="comecarJogo()">Continuar Jogando!</button>
+                <button onclick="fimDeJogo()">Parar por aqui.</button>
+            </div>
+            <div class="telaFim">
+                <h2>Obrigado por jogar!</h2>
             </div>
         </div>
     </div>
