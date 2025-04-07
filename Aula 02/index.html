@@ -11,9 +11,26 @@
   
     <div class="container">
         <div class="content">
-            <h2>Pra ganhar é preciso arriscar!</h2>
-            <p> PEDRA, PAPEL ou TESOURA?</p>
-            <button onclick="jogar()">Bora jogar!</button>
+            <div class="telaIniciar">
+                <h2 id="jogoTitulo">Pra ganhar é preciso arriscar!</h2>
+                <p id="jogo"> PEDRA, PAPEL ou TESOURA?</p>
+                <button onclick="jogar()" id="jogarBtn">Bora jogar!</button>
+            </div>
+            <div class="telaIdade">
+                <label for="inputIdade" id="labelIdade">Quantos anos você tem?</label>
+                <input type="number" id="inputIdade" name="inputIdade">
+                <button onclick="verificarIdade()" id="validacaoIdadeBtn">Começar!</button>
+                <p id="idadeInvalida">Digite uma idade válida.</p>
+                <h2 id="idadeInsuficiente">Você não tem idade suficiente para jogar jokenpô...<br>Volte quando for mais velho.</h2>
+            </div>
+            <div class="telaNome">
+                <h2 id="nomeTitulo">Vamos começar!</h2>
+                <label for="inputNome" id="labelNome">Como você gostaria de ser chamado?</label>
+                <input type="text" id="inputNome" name="inputNome">
+                <button onclick="verificarNome()" id="enviarNome">Vamos nessa!</button>
+                <p id="nomeInvalido">Digite um nome válido!</p>
+            </div>
+            <div class="telaJogo"></div>
         </div>
     </div>
     <footer>Alura - Imersão DEV - 2025</footer>

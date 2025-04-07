@@ -58,3 +58,11 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+#labelIdade, #inputIdade, #validacaoIdadeBtn, #idadeInvalida, #idadeInsuficiente, #nomeTitulo, #labelNome, #inputNome, #enviarNome, #nomeInvalido {
+    display: none;
+}
+
+#idadeInvalida, #nomeInvalido {
+    color: #ff1b42;
+}
