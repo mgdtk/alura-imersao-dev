@@ -32,7 +32,24 @@
                 <button onclick="verificarNome()" id="enviarNome">Vamos nessa!</button>
                 <p id="nomeInvalido">Digite um nome válido!</p>
             </div>
-            <div class="telaJogo"></div>
+            <div class="telaJogo">
+                <form>
+                    <h2>Escolha abaixo Pedra, Papel ou Tesoura.</h2>
+                    <label for="pedra">
+                        <input type="radio" id="pedra" name="escolha" value="pedra">
+                        <img src="./img/" alt="pedra">
+                    </label>
+                    <label for="papel">
+                        <input type="radio" id="papel" name="escolha" value="papel">
+                        <img src="./img/" alt="papel">
+                    </label>
+                    <label for="tesoura">
+                        <input type="radio" id="tesoura" name="escolha" value="tesoura">
+                        <img src="./img/" alt="tesoura">
+                    </label>
+                    <button type="submit" id="enviarEscolha">Confirmar escolha</button>
+                </form>
+            </div>
         </div>
     </div>
     <footer>Alura - Imersão DEV - 2025</footer>

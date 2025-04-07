@@ -68,4 +68,5 @@ function verificarNome() {
 
 function comecarJogo() {
     document.querySelector(".telaNome").style.display = "none";
+    document.querySelector(".telaJogo").style.display = "flex";
 }
