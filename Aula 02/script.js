@@ -1,10 +1,6 @@
 function jogar() {
-    document.getElementById("jogoTitulo").style.display = "none";
-    document.getElementById("jogo").style.display = "none";
-    document.getElementById("jogarBtn").style.display = "none";
-    document.getElementById("labelIdade").style.display = "flex";
-    document.getElementById("inputIdade").style.display = "flex";
-    document.getElementById("validacaoIdadeBtn").style.display = "flex";
+    document.querySelector(".telaIniciar").style.display = "none";
+    document.querySelector(".telaIdade").style.display = "flex";
 
     //     let escolhaJogador = parseInt(prompt("Digite 1 para Pedra, 2 para Papel ou 3 para Tesoura."));
 
@@ -48,20 +44,13 @@ function verificarIdade() {
 }
 
 function cancelarJogo() {
-    document.getElementById("labelIdade").style.display = "none";
-    document.getElementById("inputIdade").style.display = "none";
-    document.getElementById("validacaoIdadeBtn").style.display = "none";
+    document.querySelector(".validarIdade").style.display = "none";
     document.getElementById("idadeInsuficiente").style.display = "flex";
 }
 
 function telaNome() {
-    document.getElementById("labelIdade").style.display = "none";
-    document.getElementById("inputIdade").style.display = "none";
-    document.getElementById("validacaoIdadeBtn").style.display = "none";
-    document.getElementById("nomeTitulo").style.display = "flex";
-    document.getElementById("labelNome").style.display = "flex";
-    document.getElementById("inputNome").style.display = "flex";
-    document.getElementById("enviarNome").style.display = "flex";
+    document.querySelector(".telaIdade").style.display = "none";
+    document.querySelector(".telaNome").style.display = "flex";
 }
 
 function verificarNome() {
@@ -78,8 +67,5 @@ function verificarNome() {
 }
 
 function comecarJogo() {
-    document.getElementById("nomeTitulo").style.display = "none";
-    document.getElementById("labelNome").style.display = "none";
-    document.getElementById("inputNome").style.display = "none";
-    document.getElementById("enviarNome").style.display = "none";
+    document.querySelector(".telaNome").style.display = "none";
 }

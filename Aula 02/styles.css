@@ -59,7 +59,7 @@ footer {
     padding: 10px;
 }
 
-#labelIdade, #inputIdade, #validacaoIdadeBtn, #idadeInvalida, #idadeInsuficiente, #nomeTitulo, #labelNome, #inputNome, #enviarNome, #nomeInvalido {
+.telaIdade, #idadeInvalida, #idadeInsuficiente, .telaNome, #nomeInvalido {
     display: none;
 }
 
