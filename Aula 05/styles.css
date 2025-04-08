@@ -9,6 +9,16 @@ body {
 .logo {
     text-align: end;
 }
+
+.logo:hover ~ .titulo + .conteudo-jogo {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.conteudo-jogo {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
   
 .logo img {
     max-width: 150px;
