@@ -36,6 +36,7 @@ body {
 
 .content h2 {
     margin-bottom: 20px;
+    font-size: 1.5em;
 }
 
 /* Button Styles */
@@ -47,6 +48,7 @@ button {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 20px 0;
 }
 
 button:hover {
@@ -59,15 +61,69 @@ footer {
     padding: 10px;
 }
 
+/* Esconde as telas e elementos de conteúdo inicialmente */
 .telaIdade, #idadeInvalida, #idadeInsuficiente, .telaNome, #nomeInvalido, .telaJogo, input[type="radio"], #jogadaInvalida, .telaResultado, .telaFim {
     display: none;
 }
 
+/* Mensagens de erro */
 #idadeInvalida, #nomeInvalido, #jogadaInvalida {
     color: #ff1b42;
+    font-size: 1.4em;
+    font-weight: 800;
+    margin: -5px 0 20px;
 }
 
 label img {
     width: 250px;
     height: 250px;
+}
+
+.validarIdade {
+    display: flex;
+}
+
+/* Centraliza os itens de cada tela */
+.telaIniciar, .validarIdade, .telaNome, .telaJogo, .telaResultado, .telaFim {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-size: 1.7em;
+    font-weight: 600;
+    width: 100%;
+    margin: 20px 0;
+}
+
+input {
+    box-sizing: border-box;
+    width: 80%;
+    height: 2.2em;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 1px 5px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.telaJogo h2 {
+    font-size: 1.7em;
+}
+
+/* Estiliza a borda e o outline das imagens quando o radio button é marcado */
+input[type="radio"]:checked + img {
+    border: none;
+    border-radius: 3rem;
+    outline: 3px solid #ff1b7b;
+    outline-offset: -5px;
+    transition: outline 0.5s ease;
+}
+
+.continuarOuParar {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
