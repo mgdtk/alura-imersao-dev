@@ -1,39 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: url("./img/tug-of-war.png") no-repeat center
-        center fixed;
+    background: url("./img/tug-of-war.png") no-repeat center center fixed;
     background-size: cover;
     font-family: "Gabarito", sans-serif;
-    margin: 20px;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
-  
+
 .logo {
     text-align: end;
 }
-  
+
 .logo img {
     max-width: 150px;
     width: auto;
 }
-  
+
 /* Caixa principal do jogo */
 .conteudo-jogo {
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px #ff1b7b;
-    margin: 30px;
+    margin: 30px auto;
     padding: 20px;
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    width: 70%;
 }
-  
+
 .conteudo-jogo:hover {
     background: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 5px #19caca;
 }
 
 #container {
-    min-height: 150px;
     padding: 20px;
+    height: 100%;
+    width: 100%;
 }
   
 /* Títulos e textos */
@@ -62,8 +70,8 @@ button:hover {
     background: #19caca;
 }
 
-#inputsPersonagens, label {
-    display: none;
+#escolherBtn {
+    margin-top: 80px;
 }
 
 label {
@@ -73,7 +81,7 @@ label {
     justify-content: center;
 }
 
-#inputsPersonagens {
+.inputsPersonagens {
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
@@ -88,11 +96,14 @@ input {
 }
 
 #comecarBtn {
-    display: none;
     margin: 30px auto;
 }
 
 #resultadoBtn {
+    display: none;
+}
+
+.selecionarPersonagens, .telaResultado {
     display: none;
 }
 
@@ -110,4 +121,6 @@ p {
 
 .titulo h1 {
     color: black;
+    font-size: 2.5em;
+    font-weight: 700;
 }

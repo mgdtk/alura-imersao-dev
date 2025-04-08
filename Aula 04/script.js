@@ -1,18 +1,46 @@
 let forcaTotalJogador = 0;
 let forcaTotalComputador = 0;
 
+const personagens = {
+    "Harry Potter": 5,
+    "Lord Voldemort": 5,
+    "Albus Dumbledore": 5,
+    "Hermione Granger": 4,
+    "Severus Snape": 4,
+    "Draco Malfoy": 3,
+    "Sirius Black": 4,
+    "Minerva McGonagall": 4,
+    "Rubeus Hagrid": 3,
+    "Ginny Weasley": 3,
+    "Neville Longbottom": 3,
+    "Luna Lovegood": 2,
+    "Fred Weasley": 2,
+    "George Weasley": 2,
+    "Remus Lupin": 4,
+    "Bellatrix Lestrange": 4,
+    "Lucius Malfoy": 3,
+    "Dolores Umbridge": 2,
+    "Molly Weasley": 3,
+    "Arthur Weasley": 2,
+    "Cedric Diggory": 3,
+    "Cho Chang": 2,
+    "Kingsley Shacklebolt": 4,
+    "Nymphadora Tonks": 3,
+    "Gilderoy Lockhart": 1,
+    "Filius Flitwick": 3,
+    "Horace Slughorn": 3,
+    "Peter Pettigrew": 1,
+    "Victor Krum": 3
+};
+
 function escolher() {
-    document.getElementById("escolherBtn").style.display = "none";
-    document.getElementById("inputsPersonagens").style.display = "flex";
-    document.getElementById("labelPersonagensJogador").style.display = "flex";
-    document.getElementById("comecarBtn").style.display = "flex";
-    document.getElementById("escolherTexto").style.display = "none";
+    document.querySelector(".telaInicio").style.display = "none";
+    document.querySelector(".selecionarPersonagens").style.display = "flex";
 }
 
 function jogar() {
-    document.getElementById("inputsPersonagens").style.display = "none";
-    document.getElementById("labelPersonagensJogador").style.display = "none";
-    document.getElementById("comecarBtn").style.display = "none";
+    document.querySelector(".selecionarPersonagens").style.display = "none";
+    document.querySelector(".telaResultado").style.display = "flex";
 
     const personagensJogador = document.querySelectorAll(".personagemJogador");
     let forcaJogador = [0, 0, 0];
@@ -43,9 +71,6 @@ function verResultado() {
         resultado.textContent = "Você perdeu...";
     }
 
-    let infoForcaJogador = document.getElementById("informacoesJogador");
-    let infoForcaComputador = document.getElementById("informacoesComputador");
-
-    infoForcaJogador.textContent = `A força total do seu time foi: ${forcaTotalJogador}`;
-    infoForcaComputador.textContent = `A força total do time do computador foi: ${forcaTotalComputador}`;
+    document.getElementById("informacoesJogador").innerHTML = `A força total do seu time foi: ${forcaTotalJogador}`;
+    document.getElementById("informacoesComputador").innerHTML = `A força total do time do computador foi: ${forcaTotalComputador}`;
 }

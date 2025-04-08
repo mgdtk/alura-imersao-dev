@@ -17,21 +17,27 @@
     
     <main class="conteudo-jogo">
         <div id="container">
-            <h2 id="escolherTexto">Escolha 3 jogadores para seu time:</h2>
-            <button onclick="escolher()" id="escolherBtn">Começar!</button>
-
-            <label for="personagemJogador1" id="labelPersonagensJogador">Digite os nomes dos seus personagens:</label>
-            <div id="inputsPersonagens">
-                <input type="text" id="personagemJogador1" name="personagemJogador1" class="personagemJogador">
-                <input type="text" id="personagemJogador2" name="personagemJogador2" class="personagemJogador">
-                <input type="text" id="personagemJogador3" name="personagemJogador3" class="personagemJogador">
+            <div class="telaInicio">
+                <h2>Acha que seu time é forte o suficiente?</h2>
+                <button onclick="escolher()">Começar!</button>
             </div>
-            <button onclick="jogar()" id="comecarBtn">Começar Cabo de Guerra!</button>
 
-            <button onclick="verResultado()" id="resultadoBtn">Ver Resultado</button>
-            <h1 id="resultadoFinal" class="resultado"></h1>
-            <p id="informacoesJogador" class="resultado"></p>
-            <p id="informacoesComputador" class="resultado"></p>
+            <div class="selecionarPersonagens">
+                <label for="personagemJogador1" id="labelPersonagensJogador">Digite os nomes dos seus personagens:</label>
+                <div class="inputsPersonagens">
+                    <input type="text" id="personagemJogador1" name="personagemJogador1" class="personagemJogador">
+                    <input type="text" id="personagemJogador2" name="personagemJogador2" class="personagemJogador">
+                    <input type="text" id="personagemJogador3" name="personagemJogador3" class="personagemJogador">
+                </div>
+                <button onclick="jogar()">Começar Cabo de Guerra!</button>
+            </div>
+
+            <div class="telaResultado">
+                <button onclick="verResultado()" id="resultadoBtn">Ver Resultado</button>
+                <h1 id="resultadoFinal"></h1>
+                <p id="informacoesJogador"></p>
+                <p id="informacoesComputador"></p>
+            </div>
         </div>
     </main>
     <script src="./script.js"></script>
