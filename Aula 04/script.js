@@ -4,38 +4,40 @@ let forcaJogador = [0, 0, 0];
 let forcaComputador = [0, 0, 0];
 
 const personagensJogador = document.querySelectorAll(".personagemJogador");
+const personagensAtuaisComputador = [];
 
-// const personagensComputador = {
-//     "Harry Potter": 5,
-//     "Lord Voldemort": 5,
-//     "Albus Dumbledore": 5,
-//     "Hermione Granger": 4,
-//     "Severus Snape": 4,
-//     "Draco Malfoy": 3,
-//     "Sirius Black": 4,
-//     "Minerva McGonagall": 4,
-//     "Rubeus Hagrid": 3,
-//     "Ginny Weasley": 3,
-//     "Neville Longbottom": 3,
-//     "Luna Lovegood": 2,
-//     "Fred Weasley": 2,
-//     "George Weasley": 2,
-//     "Remus Lupin": 4,
-//     "Bellatrix Lestrange": 4,
-//     "Lucius Malfoy": 3,
-//     "Dolores Umbridge": 2,
-//     "Molly Weasley": 3,
-//     "Arthur Weasley": 2,
-//     "Cedric Diggory": 3,
-//     "Cho Chang": 2,
-//     "Kingsley Shacklebolt": 4,
-//     "Nymphadora Tonks": 3,
-//     "Gilderoy Lockhart": 1,
-//     "Filius Flitwick": 3,
-//     "Horace Slughorn": 3,
-//     "Peter Pettigrew": 1,
-//     "Victor Krum": 3
-// };
+const personagensComputador = [
+    {nome: "Harry Potter", forca: 5},
+    {nome: "Lord Voldemort", forca: 5},
+    {nome: "Albus Dumbledore", forca: 5},
+    {nome: "Hermione Granger", forca: 4},
+    {nome: "Severus Snape", forca: 4},
+    {nome: "Draco Malfoy", forca: 3},
+    {nome: "Sirius Black", forca: 4},
+    {nome: "Minerva McGonagall", forca: 4},
+    {nome: "Rubeus Hagrid", forca: 3},
+    {nome: "Ginny Weasley", forca: 3},
+    {nome: "Neville Longbottom", forca: 3},
+    {nome: "Luna Lovegood", forca: 2},
+    {nome: "Fred Weasley", forca: 2},
+    {nome: "George Weasley", forca: 2},
+    {nome: "Remus Lupin", forca: 4},
+    {nome: "Bellatrix Lestrange", forca: 4},
+    {nome: "Lucius Malfoy", forca: 3},
+    {nome: "Dolores Umbridge", forca: 2},
+    {nome: "Molly Weasley", forca: 3},
+    {nome: "Arthur Weasley", forca: 2},
+    {nome: "Cedric Diggory", forca: 3},
+    {nome: "Cho Chang", forca: 2},
+    {nome: "Kingsley Shacklebolt", forca: 4},
+    {nome: "Nymphadora Tonks", forca: 3},
+    {nome: "Gilderoy Lockhart", forca: 1},
+    {nome: "Filius Flitwick", forca: 3},
+    {nome: "Horace Slughorn", forca: 3},
+    {nome: "Peter Pettigrew", forca: 1},
+    {nome: "Victor Krum", forca: 3},
+    {nome: "Percy Weasley", forca: 3}
+];
 
 function escolher() {
     document.querySelector(".telaInicio").style.display = "none";
@@ -49,9 +51,18 @@ function jogar() {
 
     for (let i = 0; i < personagensJogador.length; i++) {
         forcaJogador[i] = Math.floor(Math.random() * 5) + 1;
-        forcaComputador[i] = Math.floor(Math.random() * 5) + 1;
-        console.log(personagensJogador[i].value); // Controle
-        console.log(forcaJogador[i]); // Controle
+
+        let indiceAleatorio = Math.floor(Math.random() * personagensComputador.length);
+        let personagemEscolhido = personagensComputador.splice(indiceAleatorio, 1)[0];
+        personagensAtuaisComputador.push(personagemEscolhido);
+        forcaComputador[i] = personagemEscolhido.forca;
+
+        // Controle dos valores
+        console.log(`Força jogador: ${forcaJogador[i]}`);
+        console.log(`Personagem aleatório escolhido: ${personagemEscolhido.nome}`);
+        console.log(`Força computador: ${forcaComputador[i]}`);
+        console.log(personagensAtuaisComputador);
+        console.log(personagensComputador);
     }
 
     forcaTotalJogador = forcaJogador.reduce((acc, valor) => acc + valor, 0);
@@ -77,11 +88,10 @@ function verResultado() {
     document.querySelector(".informacoesResultados").style.display = "flex";
 
     document.querySelector(".forcasPersonagensJogador").style.display = "flex";
-    document.querySelector(".forcasPersonagensJogador").style.display = "flex";
+    document.querySelector(".forcasPersonagensComputador").style.display = "flex";
 
-    console.log(forcaJogador.length);
     for (let i = 0; i < forcaJogador.length; i++) {
         document.getElementById(`forca${i+1}Jogador`).innerHTML = `A força do personagem ${personagensJogador[i].value} foi ${forcaJogador[i]}`;
-        // document.getElementById(`forca${i+1}Computador`).innerHTML = `A força do personagem ${personagensComputador[i].value} foi ${forcaComputador[i]}`;
+        document.getElementById(`forca${i+1}Computador`).innerHTML = `A força do personagem ${personagensAtuaisComputador[i].nome} foi ${forcaComputador[i]}`;
     }
 }

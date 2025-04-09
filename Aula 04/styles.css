@@ -126,7 +126,7 @@ input {
     padding: 5px;
 }
 
-.selecionarPersonagens, .telaResultado, .informacoesResultados, .forcasPersonagensJogador, .forcasPersonagensJogador {
+.selecionarPersonagens, .telaResultado, .informacoesResultados, .forcasPersonagensJogador, .forcasPersonagensComputador {
     display: none;
 }
 
@@ -134,7 +134,7 @@ input {
     flex-direction: column;
 }
 
-.forcasPersonagensJogador, .forcasPersonagensJogador {
+.forcasPersonagensJogador, .forcasPersonagensComputador {
     flex-direction: row;
     justify-content: space-evenly;
 }
