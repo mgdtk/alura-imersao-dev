@@ -126,10 +126,15 @@ input {
     padding: 5px;
 }
 
-.selecionarPersonagens, .telaResultado, .informacoesResultados {
+.selecionarPersonagens, .telaResultado, .informacoesResultados, .forcasPersonagensJogador, .forcasPersonagensJogador {
     display: none;
 }
 
 .telaResultado, .informacoesResultados {
     flex-direction: column;
+}
+
+.forcasPersonagensJogador, .forcasPersonagensJogador {
+    flex-direction: row;
+    justify-content: space-evenly;
 }

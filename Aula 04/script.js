@@ -1,7 +1,11 @@
 let forcaTotalJogador = 0;
 let forcaTotalComputador = 0;
+let forcaJogador = [0, 0, 0];
+let forcaComputador = [0, 0, 0];
 
-// const personagens = {
+const personagensJogador = document.querySelectorAll(".personagemJogador");
+
+// const personagensComputador = {
 //     "Harry Potter": 5,
 //     "Lord Voldemort": 5,
 //     "Albus Dumbledore": 5,
@@ -43,10 +47,6 @@ function jogar() {
     document.querySelector(".selecionarPersonagens").style.display = "none";
     document.querySelector(".telaResultado").style.display = "flex";
 
-    const personagensJogador = document.querySelectorAll(".personagemJogador");
-    let forcaJogador = [0, 0, 0];
-    let forcaComputador = [0, 0, 0];
-
     for (let i = 0; i < personagensJogador.length; i++) {
         forcaJogador[i] = Math.floor(Math.random() * 5) + 1;
         forcaComputador[i] = Math.floor(Math.random() * 5) + 1;
@@ -72,7 +72,16 @@ function verResultado() {
         resultado.textContent = "Você perdeu...";
     }
 
-    document.getElementById("informacoesJogador").innerHTML = `A força total do seu time foi: ${forcaTotalJogador}`;
-    document.getElementById("informacoesComputador").innerHTML = `A força total do time do computador foi: ${forcaTotalComputador}`;
+    document.getElementById("forcaTotalJogador").innerHTML = `A força total do seu time foi: ${forcaTotalJogador}`;
+    document.getElementById("forcaTotalComputador").innerHTML = `A força total do time do computador foi: ${forcaTotalComputador}`;
     document.querySelector(".informacoesResultados").style.display = "flex";
+
+    document.querySelector(".forcasPersonagensJogador").style.display = "flex";
+    document.querySelector(".forcasPersonagensJogador").style.display = "flex";
+
+    console.log(forcaJogador.length);
+    for (let i = 0; i < forcaJogador.length; i++) {
+        document.getElementById(`forca${i+1}Jogador`).innerHTML = `A força do personagem ${personagensJogador[i].value} foi ${forcaJogador[i]}`;
+        // document.getElementById(`forca${i+1}Computador`).innerHTML = `A força do personagem ${personagensComputador[i].value} foi ${forcaComputador[i]}`;
+    }
 }
