@@ -126,7 +126,7 @@ input {
     padding: 5px;
 }
 
-.selecionarPersonagens, .telaResultado, .informacoesResultados, .forcasPersonagensJogador, .forcasPersonagensComputador {
+.selecionarPersonagens, .telaResultado, .informacoesResultados, .forcasPersonagensJogador, .forcasPersonagensComputador, #nomeInvalido {
     display: none;
 }
 
@@ -137,4 +137,11 @@ input {
 .forcasPersonagensJogador, .forcasPersonagensComputador {
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+#nomeInvalido {
+    color: #ff1b42;
+    font-size: 1.4em;
+    font-weight: 800;
+    margin: -5px 0 20px;
 }

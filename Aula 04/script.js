@@ -45,6 +45,23 @@ function escolher() {
     document.querySelector(".inputsPersonagens").style.display = "flex";
 }
 
+function verificarNomes() {
+    let nome1 = document.getElementById("personagemJogador1").value;
+    let nome2 = document.getElementById("personagemJogador2").value;
+    let nome3 = document.getElementById("personagemJogador3").value;
+
+    if (nome1 == "" || nome2 == "" || nome3 == "") {
+        document.getElementById("nomeInvalido").style.display = "flex";
+        nome1 = document.getElementById("personagemJogador1").value;
+        nome2 = document.getElementById("personagemJogador2").value;
+        nome3 = document.getElementById("personagemJogador3").value;
+    } else {
+        document.getElementById("nomeInvalido").style.display = "none";
+
+        jogar();
+    }
+}
+
 function jogar() {
     document.querySelector(".selecionarPersonagens").style.display = "none";
     document.querySelector(".telaResultado").style.display = "flex";
