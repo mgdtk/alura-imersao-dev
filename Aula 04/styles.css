@@ -3,7 +3,7 @@
 }
 
 body {
-    background: url("./img/tug-of-war.png") no-repeat center center fixed;
+    background: url("./img/hogwarts-legacy.png") no-repeat center center fixed;
     background-size: cover;
     font-family: "Gabarito", sans-serif;
     margin: 0;
@@ -21,9 +21,18 @@ body {
 }
 
 h1 {
-    color: #181818;
     font-size: 2.5em;
     font-weight: 700;
+}
+
+#quote {
+    display: none;
+}
+
+h1:hover + #quote {
+    display: flex;
+    font-style: italic;
+    font-weight: 500;
 }
 
 /* Caixa principal do jogo */
@@ -58,7 +67,7 @@ h1, h2, p {
     text-align: center;
 }
 
-h2, p, label {
+h1, h2, p, label {
     color: #fafafa;
 }
 

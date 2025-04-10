@@ -101,14 +101,14 @@ function verResultado() {
     }
 
     document.getElementById("forcaTotalJogador").innerHTML = `A força total do seu time foi: ${forcaTotalJogador}`;
-    document.getElementById("forcaTotalComputador").innerHTML = `A força total do time do computador foi: ${forcaTotalComputador}`;
+    document.getElementById("forcaTotalComputador").innerHTML = `A magia total dos Bruxos foi: ${forcaTotalComputador}`;
     document.querySelector(".informacoesResultados").style.display = "flex";
 
     document.querySelector(".forcasPersonagensJogador").style.display = "flex";
     document.querySelector(".forcasPersonagensComputador").style.display = "flex";
 
     for (let i = 0; i < forcaJogador.length; i++) {
-        document.getElementById(`forca${i+1}Jogador`).innerHTML = `A força do personagem ${personagensJogador[i].value} foi ${forcaJogador[i]}`;
-        document.getElementById(`forca${i+1}Computador`).innerHTML = `A força do personagem ${personagensAtuaisComputador[i].nome} foi ${forcaComputador[i]}`;
+        document.getElementById(`forca${i+1}Jogador`).innerHTML = `A força de ${personagensJogador[i].value} foi ${forcaJogador[i]}`;
+        document.getElementById(`forca${i+1}Computador`).innerHTML = `A magia de ${personagensAtuaisComputador[i].nome} foi ${forcaComputador[i]}`;
     }
 }
