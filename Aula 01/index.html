@@ -25,12 +25,13 @@
                         <option value="euro">Euro</option>
                         <option value="dolar">Dólar</option>
                     </select>
+                    <p id="moedaInvalida">Escolha inválida. Selecione Won, Euro ou Dólar.</p>
                 </div>
                 <div class="valoresReais">
                     <label for="valor">Qual valor (em reais) deseja converter?</label>
-                    <input type="number" id="valor">
+                    <input type="number" id="valor" maxlength="10">
                 </div>
-                <p><span id="valorParaConverter"></span> convertido é <span id="valorConvertido"></span></p>
+                <p id="resultado"><span id="valorParaConverter"></span> convertido equivale a <span id="valorConvertido"></span> <span id="nomeMoeda"></span></p>
             </div>
         </div>
     </div>

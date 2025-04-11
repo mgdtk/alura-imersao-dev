@@ -32,6 +32,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px 40px;
     border-radius: 8px;
+    max-width: 50%;
 }
   
 .content h2 {
@@ -59,7 +60,7 @@ footer {
     padding: 10px;
 }
 
-.telaValores {
+.telaValores, #moedaInvalida, #resultado {
     display: none;
 }
 
@@ -82,4 +83,25 @@ select, input {
     font-size: 1.1em;
     padding: 6px;
     border-width: 1px;
+}
+
+#moedaInvalida {
+    color: #ff1b42;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 5px auto;
+}
+
+#resultado {
+    justify-content: center;
+    font-size: 1.2em;
+    overflow: hidden;
+}
+
+span {
+    margin-right: 4px;
+}
+
+#valorConvertido {
+    margin-left: 4px;
 }
