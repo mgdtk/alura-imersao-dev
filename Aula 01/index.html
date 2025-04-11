@@ -11,9 +11,27 @@
 
     <div class="container">
         <div class="content">
-            <h2>Quem ganha, ganha em Wons!</h2>
-            <p> Que tal converter esse valor?</p>
-            <button onclick="conversor()">Bora converter!</button>
+            <div class="telaInicial">
+                <h1>Quem ganha, ganha em Wons!</h1>
+                <p> Que tal converter esse valor?</p>
+                <button onclick="conversor()">Bora converter!</button>
+            </div>
+            <div class="telaValores">
+                <div class="valoresMoedas">
+                    <label for="moeda">Qual moeda deseja converter?</label>
+                    <select name="moeda" id="moeda" required>
+                        <option value="">Escolha uma opção</option>
+                        <option value="won">Won</option>
+                        <option value="euro">Euro</option>
+                        <option value="dolar">Dólar</option>
+                    </select>
+                </div>
+                <div class="valoresReais">
+                    <label for="valor">Qual valor (em reais) deseja converter?</label>
+                    <input type="number" id="valor">
+                </div>
+                <p><span id="valorParaConverter"></span> convertido é <span id="valorConvertido"></span></p>
+            </div>
         </div>
     </div>
     <footer>Alura - Imersão DEV - 2025</footer>

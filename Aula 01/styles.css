@@ -57,4 +57,29 @@ button:hover {
 footer {
     text-align: center;
     padding: 10px;
-}  
+}
+
+.telaValores {
+    display: none;
+}
+
+.valoresMoedas, .valoresReais {
+    display: flex;
+}
+
+.telaValores, .valoresMoedas, .valoresReais {
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.4em;
+    padding: 20px 10px;
+}
+
+select, input {
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 1.1em;
+    padding: 6px;
+    border-width: 1px;
+}
