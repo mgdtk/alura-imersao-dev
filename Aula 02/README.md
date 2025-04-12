@@ -1,4 +1,4 @@
-# Pedra, Papel ou Tesoura?
+# ✊ Pedra, ✋ Papel ou ✌️ Tesoura?
 
 ## 🎮 Descrição
 
@@ -6,19 +6,19 @@ Este é um jogo clássico de Pedra, Papel e Tesoura recriado com uma abordagem m
 
 ## ✨ Funcionalidades
 
-- Validação da idade mínima para jogar (18+)
+- **Validação** da idade mínima para jogar (18+)
 
-- Entrada e validação do nome do jogador
+- **Entrada** e **validação** do nome do jogador
 
-- Escolha entre pedra, papel ou tesoura
+- **Escolha** entre pedra, papel ou tesoura
 
-- Computador faz jogada aleatória
+- Computador faz **jogada aleatória**
 
-- Resultado apresentado em tempo real
+- **Resultado** apresentado em tempo real
 
-- Tela final com placar de vitórias
+- Tela final com **placar de vitórias**
 
-- Reset automático para uma nova partida
+- **Reset automático** para uma nova partida
 
 ## 🧠 Habilidades Desenvolvidas
 
@@ -26,27 +26,27 @@ Durante o desenvolvimento deste projeto, aprofundei e apliquei conhecimentos imp
 
 ### 📌 JavaScript
 
-- Manipulação da DOM com querySelector e getElementById
+- **Manipulação da DOM** com `querySelector` e `getElementById`
 
-- Estruturas condicionais (if, else if, else)
+- **Estruturas condicionais** (`if`, `else if`, `else`)
 
-- Estruturas de repetição (for)
+- **Estruturas de repetição** (`for`)
 
-- Eventos e validações de formulário
+- **Eventos** e **validações** de formulário
 
-- Uso de funções assíncronas com async/await e setTimeout para simular delays
+- Uso de **funções assíncronas** com `async`/`await` e `setTimeout` para simular delays
 
-- Geração de números aleatórios (Math.random)
+- **Geração de números aleatórios** com `Math.random()` e `Math.floor()`
 
-- Controle de estado entre telas com display: none/flex
+- **Controle do fluxo da aplicação** usando `style.display = "none"` / `"flex"` para alternar telas
 
 ### 📌 HTML & CSS
 
-- Criação de múltiplas telas (início, idade, nome, jogo, resultado, fim) com exibição condicional
+- Criação de **múltiplas telas** (início, idade, nome, jogo, resultado, fim) com **exibição condicional**
 
-- Uso de classes e IDs para organização e controle visual
+- Uso de **classes e IDs** para organização e controle visual
 
-- Estilização básica e responsiva das telas para melhor UX
+- **Estilização** básica e responsiva das telas para melhor UX
 
 ## 📈 Aprendizados
 
