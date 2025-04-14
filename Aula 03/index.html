@@ -11,9 +11,23 @@
 
     <div class="container">
         <div class="content">
-            <h2>Mostre que você domina a tabuada!</h2>
-            <p>Quão bom você é na tabuada?</p>
-            <button onclick="jogar()">Bora jogar!</button>
+            <div class="telaInicial">
+                <h2>Mostre que você domina a tabuada!</h2>
+                <p>Quão bom você é na tabuada?</p>
+                <button onclick="escolherRodadas()">Bora jogar!</button>
+            </div>
+            <div class="telaRodadas">
+                <label for="numRodadas">Quantas rodadas deseja jogar?</label>
+                <input type="number" name="numRodadas" id="numRodadas">
+                <button onclick="validarRodadas()">Vamos nessa!</button>
+                <p id="numRodadasInvalido">Digite uma quantidade de rodadas válida.</p>
+            </div>
+            <div class="telaTabuada">
+                <label for="numTabuada">Deseja ser desafiado até a tabuada de qual número?</label>
+                <input type="number" name="numTabuada" id="numTabuada">
+                <button onclick="validarTabuada()">Começar!</button>
+                <p id="tabuadaInvalida">Digite o número da tabuada limite que gostaria de jogar.</p>
+            </div>
         </div>
     </div>
     <footer>Alura - Imersão DEV - 2025</footer>
