@@ -1,11 +1,15 @@
+let rodadas;
+let tabuada;
+let rodadaAtual = 1;
+let resultado;
+
 function escolherRodadas() {
     document.querySelector(".telaInicial").style.display = "none";
     document.querySelector(".telaRodadas").style.display = "flex";
 }
 
 function validarRodadas() {
-    let rodadas = document.getElementById("numRodadas").value;
-    rodadas = parseInt(rodadas);
+    rodadas = parseInt(document.getElementById("numRodadas").value);
 
     if (isNaN(rodadas) || rodadas <= 0) {
         document.getElementById("numRodadasInvalido").style.display = "flex";
@@ -21,48 +25,46 @@ function escolherTabuada() {
 }
 
 function validarTabuada() {
-    let tabuada = document.getElementById("numTabuada").value;
-    tabuada = parseInt(tabuada);
+    tabuada = parseInt(document.getElementById("numTabuada").value);
 
     if (isNaN(tabuada) || tabuada < 0) {
         document.getElementById("tabuadaInvalida").style.display = "flex";
     } else {
         document.getElementById("tabuadaInvalida").style.display = "none";
-        jogar();
+        document.querySelector(".telaTabuada").style.display = "none";
+        document.querySelector(".telaJogo").style.display = "flex";
+        gerarPergunta();
     }
 }
 
-// function jogar() {
-//     for (let i = 1; i < (rodadas + 1); i++) {
-//         let primeiroNumero = Math.floor(Math.random() * (tabuada + 1));
-//         let segundoNumero = Math.floor(Math.random() * (tabuada + 1));
+function gerarPergunta() {
+    let primeiroNumero = Math.floor(Math.random() * (tabuada + 1));
+    let segundoNumero = Math.floor(Math.random() * (tabuada + 1));
 
-//         let resultado = primeiroNumero * segundoNumero;
+    resultado = primeiroNumero * segundoNumero;
 
-//         let palpiteJogador = prompt(`Rodada ${i} de ${rodadas}. Digite o resultado da seguinte multiplicação: ${primeiroNumero}x${segundoNumero}`);
-//         if (verificarCancelamento(palpiteJogador)) return;
+    document.getElementById("numRodada").innerHTML = `Rodada ${rodadaAtual} de ${rodadas}`;
+    document.getElementById("labelMultiplicacao").innerHTML = `Digite o resultado da seguinte multiplicação: ${primeiroNumero}x${segundoNumero}`;
+}
 
-//         while (isNaN(palpiteJogador) || palpiteJogador == "") {
-//             palpiteJogador = prompt(`Entrada inválida. Digite um número para o resultado da seguinte multiplicação: ${primeiroNumero}x${segundoNumero}`);
-//             if (verificarCancelamento(palpiteJogador)) return;
-//         }
+function conferirResposta() {
+    let palpiteJogador = document.getElementById("respostaJogador").value;
 
-//         if (palpiteJogador != resultado) {
-//             alert(`Você errou! O resultado era ${resultado}.`);
-//             return;
-//         } else {
-//             alert(`Acertou!`);
-//             if (i == rodadas) {
-//                 alert("Parabéns! Você venceu!");
-//             }
-//         }
-//     }
-// }
+    while (isNaN(palpiteJogador) || palpiteJogador < 0) {
+        document.getElementById("resultadoInvalido").innerHTML = `Entrada inválida. Digite um número para o resultado da seguinte multiplicação: ${primeiroNumero}x${segundoNumero}`;
+        document.getElementById("resultadoInvalido").style.display = "flex";
+    }
 
-// function verificarCancelamento(valor) {
-//     if (valor === null) {
-//         console.log("Operação cancelada.");
-//         return true;
-//     }
-//     return false;
-// }
+    if (palpiteJogador != resultado) {
+        document.querySelector(".telaJogo").style.display = "none";
+        document.getElementById("textoDerrota").innerHTML = `Você errou! O resultado era ${resultado}.`;
+        document.querySelector(".telaDerrota").style.display = "flex";
+    } else if (rodadaAtual == rodadas) {
+        document.querySelector(".telaJogo").style.display = "none";
+        document.getElementById("textoVitoria").innerHTML = `Parabéns! Você venceu!`;
+        document.querySelector(".telaVitoria").style.display = "flex";
+    } else {
+        rodadaAtual++;
+        gerarPergunta();
+    }
+}

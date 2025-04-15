@@ -12,7 +12,7 @@
     <div class="container">
         <div class="content">
             <div class="telaInicial">
-                <h2>Mostre que você domina a tabuada!</h2>
+                <h1>Mostre que você domina a tabuada!</h1>
                 <p>Quão bom você é na tabuada?</p>
                 <button onclick="escolherRodadas()">Bora jogar!</button>
             </div>
@@ -27,6 +27,19 @@
                 <input type="number" name="numTabuada" id="numTabuada">
                 <button onclick="validarTabuada()">Começar!</button>
                 <p id="tabuadaInvalida">Digite o número da tabuada limite que gostaria de jogar.</p>
+            </div>
+            <div class="telaJogo">
+                <p id="numRodada"></p>
+                <label for="respostaJogador" id="labelMultiplicacao"></label>
+                <input type="number" name="respostaJogador" id="respostaJogador">
+                <button onclick="conferirResposta()">Confirmar</button>
+                <p id="resultadoInvalido"></p>
+            </div>
+            <div class="telaDerrota">
+                <h1 id="textoDerrota"></h1>
+            </div>
+            <div class="telaVitoria">
+                <h1 id="textoVitoria"></h1>
             </div>
         </div>
     </div>

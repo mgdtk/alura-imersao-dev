@@ -34,7 +34,7 @@ body {
     border-radius: 8px;
 }
 
-.content h2 {
+.content h1 {
     margin-bottom: 20px;
 }
 
@@ -59,11 +59,11 @@ footer {
     padding: 10px;
 }
 
-.telaRodadas, #numRodadasInvalido, .telaTabuada, #tabuadaInvalida {
+.telaRodadas, #numRodadasInvalido, .telaTabuada, #tabuadaInvalida, #resultadoInvalido, .telaJogo, .telaDerrota, .telaVitoria {
     display: none;
 }
 
-#numRodadasInvalido, #tabuadaInvalida {
+#numRodadasInvalido, #tabuadaInvalida, #resultadoInvalido {
     color: #ff1b42;
     font-size: 1.4em;
     font-weight: 800;
