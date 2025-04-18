@@ -18,13 +18,13 @@
             </div>
             <div class="telaRodadas">
                 <label for="numRodadas">Quantas rodadas deseja jogar?</label>
-                <input type="number" name="numRodadas" id="numRodadas">
+                <input type="number" name="numRodadas" id="numRodadas" placeholder="10">
                 <button onclick="validarRodadas()">Vamos nessa!</button>
                 <p id="numRodadasInvalido">Digite uma quantidade de rodadas válida.</p>
             </div>
             <div class="telaTabuada">
                 <label for="numTabuada">Deseja ser desafiado até a tabuada de qual número?</label>
-                <input type="number" name="numTabuada" id="numTabuada">
+                <input type="number" name="numTabuada" id="numTabuada" placeholder="10">
                 <button onclick="validarTabuada()">Começar!</button>
                 <p id="tabuadaInvalida">Digite o número da tabuada limite que gostaria de jogar.</p>
             </div>
@@ -37,9 +37,11 @@
             </div>
             <div class="telaDerrota">
                 <h1 id="textoDerrota"></h1>
+                <button onclick="escolherRodadas()">Jogar novamente</button>
             </div>
             <div class="telaVitoria">
                 <h1 id="textoVitoria"></h1>
+                <button onclick="escolherRodadas()">Jogar novamente</button>
             </div>
         </div>
     </div>

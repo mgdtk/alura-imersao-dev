@@ -1,11 +1,20 @@
 let rodadas;
 let tabuada;
-let rodadaAtual = 1;
+let rodadaAtual;
 let resultado;
+let primeiroNumero;
+let segundoNumero;
 
 function escolherRodadas() {
+    rodadaAtual = 1;
+    document.getElementById("numRodadas").value = "";
+    document.getElementById("numTabuada").value = "";
+    document.getElementById("respostaJogador").value = "";
+    document.querySelector(".telaDerrota").style.display = "none";
+    document.querySelector(".telaVitoria").style.display = "none";
     document.querySelector(".telaInicial").style.display = "none";
     document.querySelector(".telaRodadas").style.display = "flex";
+    document.getElementById("numRodadas").focus();
 }
 
 function validarRodadas() {
@@ -22,6 +31,7 @@ function validarRodadas() {
 function escolherTabuada() {
     document.querySelector(".telaRodadas").style.display = "none";
     document.querySelector(".telaTabuada").style.display = "flex";
+    document.getElementById("numTabuada").focus();
 }
 
 function validarTabuada() {
@@ -33,13 +43,14 @@ function validarTabuada() {
         document.getElementById("tabuadaInvalida").style.display = "none";
         document.querySelector(".telaTabuada").style.display = "none";
         document.querySelector(".telaJogo").style.display = "flex";
+        document.getElementById("respostaJogador").focus();
         gerarPergunta();
     }
 }
 
 function gerarPergunta() {
-    let primeiroNumero = Math.floor(Math.random() * (tabuada + 1));
-    let segundoNumero = Math.floor(Math.random() * (tabuada + 1));
+    primeiroNumero = Math.floor(Math.random() * (tabuada + 1));
+    segundoNumero = Math.floor(Math.random() * (tabuada + 1));
 
     resultado = primeiroNumero * segundoNumero;
 
@@ -50,11 +61,16 @@ function gerarPergunta() {
 function conferirResposta() {
     let palpiteJogador = document.getElementById("respostaJogador").value;
 
-    while (isNaN(palpiteJogador) || palpiteJogador < 0) {
+    if (isNaN(palpiteJogador) || palpiteJogador < 0 || palpiteJogador == "") {
         document.getElementById("resultadoInvalido").innerHTML = `Entrada inválida. Digite um número para o resultado da seguinte multiplicação: ${primeiroNumero}x${segundoNumero}`;
         document.getElementById("resultadoInvalido").style.display = "flex";
+    } else {
+        document.getElementById("resultadoInvalido").style.display = "none";
+        verificarResposta(palpiteJogador);
     }
+}
 
+function verificarResposta(palpiteJogador) {
     if (palpiteJogador != resultado) {
         document.querySelector(".telaJogo").style.display = "none";
         document.getElementById("textoDerrota").innerHTML = `Você errou! O resultado era ${resultado}.`;
@@ -64,7 +80,28 @@ function conferirResposta() {
         document.getElementById("textoVitoria").innerHTML = `Parabéns! Você venceu!`;
         document.querySelector(".telaVitoria").style.display = "flex";
     } else {
+        document.getElementById("respostaJogador").value = "";
         rodadaAtual++;
         gerarPergunta();
     }
 }
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+
+        let telas = document.querySelectorAll(
+            ".telaInicial, .telaRodadas, .telaTabuada, .telaJogo, .telaVitoria, .telaDerrota"
+        );
+
+        for (let tela of telas) {
+            if (getComputedStyle(tela).display === "flex") {
+                let botao = tela.querySelector("button");
+                if (botao) {
+                    botao.click();
+                }
+                break;
+            }
+        }
+    }
+});

@@ -17,6 +17,11 @@ body {
     width: auto;
 }
 
+.telaInicial p {
+    font-size: 1.4em;
+    margin: 0 auto 22px;
+}
+
 /* Container with the background image */
 .container {
     background: url('./img/numbers.png') no-repeat center center/cover;
@@ -42,21 +47,44 @@ body {
 button {
     background-color: #ff1b7b;
     border: none;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     font-size: 1.2em;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 200px;
+    height: 48px;
+    margin: 0 auto;
 }
 
 button:hover {
     background-color: #1ABC9C;
 }
 
+label {
+    font-size: 1.6em;
+}
+
+input {
+    width: 320px;
+    height: 32px;
+    font-size: 1.2em;
+    padding: 2px 5px;
+    margin: 16px auto;
+}
+
+::placeholder {
+    color: #999999;
+}
+
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 10px;
+}
+
+.telaInicial {
+    display: flex;
 }
 
 .telaRodadas, #numRodadasInvalido, .telaTabuada, #tabuadaInvalida, #resultadoInvalido, .telaJogo, .telaDerrota, .telaVitoria {
@@ -67,5 +95,11 @@ footer {
     color: #ff1b42;
     font-size: 1.4em;
     font-weight: 800;
-    margin: -5px 0 20px;
+    margin: 10px auto 20px;
+    max-width: 60%;
+}
+
+.telaInicial, .telaRodadas, .telaTabuada, .telaJogo, .telaDerrota, .telaVitoria {
+    flex-direction: column;
+    gap: 10px;
 }
