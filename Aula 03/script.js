@@ -4,6 +4,7 @@ let rodadaAtual;
 let resultado;
 let primeiroNumero;
 let segundoNumero;
+let intervalo;
 
 function escolherRodadas() {
     rodadaAtual = 1;
@@ -49,6 +50,8 @@ function validarTabuada() {
 }
 
 function gerarPergunta() {
+    iniciarTimer(10);
+
     primeiroNumero = Math.floor(Math.random() * (tabuada + 1));
     segundoNumero = Math.floor(Math.random() * (tabuada + 1));
 
@@ -71,6 +74,7 @@ function conferirResposta() {
 }
 
 function verificarResposta(palpiteJogador) {
+    pararTimer();
     if (palpiteJogador != resultado) {
         document.querySelector(".telaJogo").style.display = "none";
         document.getElementById("textoDerrota").innerHTML = `Você errou! O resultado era ${resultado}.`;
@@ -84,6 +88,34 @@ function verificarResposta(palpiteJogador) {
         rodadaAtual++;
         gerarPergunta();
     }
+}
+
+function iniciarTimer(tempoInicial) {
+    let tempoRestante = tempoInicial;
+    const elementoTimer = document.getElementById("timer");
+    document.getElementById("timer").style.color = "white";
+
+    elementoTimer.innerHTML = `Tempo restante: ${tempoRestante} segundos`;
+    tempoRestante--;
+
+    intervalo = setInterval(() => {
+        if (tempoRestante <= 3) {
+            document.getElementById("timer").style.color = "#ff1b42";
+        }
+        if (tempoRestante <= 0) {
+            clearInterval(intervalo);
+            document.querySelector(".telaJogo").style.display = "none";
+            document.getElementById("textoDerrota").innerHTML = `O tempo acabou! O resultado era ${resultado}.`;
+            document.querySelector(".telaDerrota").style.display = "flex";
+        } else {
+            elementoTimer.innerHTML = `Tempo restante: ${tempoRestante} segundos`;
+            tempoRestante--;
+        }
+    }, 1000);
+}
+
+function pararTimer() {
+    clearInterval(intervalo);
 }
 
 document.addEventListener("keydown", function (event) {
