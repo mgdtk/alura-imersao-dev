@@ -1,4 +1,4 @@
-# 🧠 Jogo da Tabuada Interativo
+# 🧠 Jogo da Tabuada
 
 ## 🎮 Descrição
 
