@@ -6,11 +6,13 @@ let primeiroNumero;
 let segundoNumero;
 let intervalo;
 
+// Inicializa a primeira rodada e exibe a tela de escolha de rodadas
 function escolherRodadas() {
     rodadaAtual = 1;
     document.getElementById("numRodadas").value = "";
     document.getElementById("numTabuada").value = "";
     document.getElementById("respostaJogador").value = "";
+    document.getElementById("resultadoInvalido").style.display = "none";
     document.querySelector(".telaDerrota").style.display = "none";
     document.querySelector(".telaVitoria").style.display = "none";
     document.querySelector(".telaInicial").style.display = "none";
@@ -18,6 +20,7 @@ function escolherRodadas() {
     document.getElementById("numRodadas").focus();
 }
 
+// Valida o número de rodadas e chama a função para escolher a tabuada
 function validarRodadas() {
     rodadas = parseInt(document.getElementById("numRodadas").value);
 
@@ -29,12 +32,14 @@ function validarRodadas() {
     }
 }
 
+// Exibe a tela para o jogador escolher a tabuada
 function escolherTabuada() {
     document.querySelector(".telaRodadas").style.display = "none";
     document.querySelector(".telaTabuada").style.display = "flex";
     document.getElementById("numTabuada").focus();
 }
 
+// Valida a tabuada escolhida e exibe a tela do jogo se for válida
 function validarTabuada() {
     tabuada = parseInt(document.getElementById("numTabuada").value);
 
@@ -44,11 +49,11 @@ function validarTabuada() {
         document.getElementById("tabuadaInvalida").style.display = "none";
         document.querySelector(".telaTabuada").style.display = "none";
         document.querySelector(".telaJogo").style.display = "flex";
-        document.getElementById("respostaJogador").focus();
         gerarPergunta();
     }
 }
 
+// Gera uma nova pergunta de multiplicação com base na tabuada e exibe a pergunta ao jogador
 function gerarPergunta() {
     iniciarTimer(10);
 
@@ -59,20 +64,24 @@ function gerarPergunta() {
 
     document.getElementById("numRodada").innerHTML = `Rodada ${rodadaAtual} de ${rodadas}`;
     document.getElementById("labelMultiplicacao").innerHTML = `Digite o resultado da seguinte multiplicação: ${primeiroNumero}x${segundoNumero}`;
+    document.getElementById("respostaJogador").focus();
 }
 
+// Valida a resposta do jogador e chama a função para verificar se está correta
 function conferirResposta() {
     let palpiteJogador = document.getElementById("respostaJogador").value;
 
     if (isNaN(palpiteJogador) || palpiteJogador < 0 || palpiteJogador == "") {
         document.getElementById("resultadoInvalido").innerHTML = `Entrada inválida. Digite um número para o resultado da seguinte multiplicação: ${primeiroNumero}x${segundoNumero}`;
         document.getElementById("resultadoInvalido").style.display = "flex";
+        document.getElementById("respostaJogador").focus();
     } else {
         document.getElementById("resultadoInvalido").style.display = "none";
         verificarResposta(palpiteJogador);
     }
 }
 
+// Verifica a resposta do jogador e decide se o jogo continua ou termina em derrota ou vitória
 function verificarResposta(palpiteJogador) {
     pararTimer();
     if (palpiteJogador != resultado) {
@@ -90,6 +99,7 @@ function verificarResposta(palpiteJogador) {
     }
 }
 
+// Inicia um temporizador de contagem regressiva para a rodada
 function iniciarTimer(tempoInicial) {
     let tempoRestante = tempoInicial;
     const elementoTimer = document.getElementById("timer");
@@ -114,10 +124,12 @@ function iniciarTimer(tempoInicial) {
     }, 1000);
 }
 
+// Interrompe o temporizador em andamento
 function pararTimer() {
     clearInterval(intervalo);
 }
 
+// Permite que o jogador navegue pelas telas e submeta ações ao pressionar "Enter"
 document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
